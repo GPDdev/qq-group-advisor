@@ -164,7 +164,7 @@ def prepare_action(base_url: str, action: str, payload: dict, output: Path) -> d
     exact = _canonical_action(base_url, action, payload)
     digest = hashlib.sha256(json.dumps(exact, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()).hexdigest()[:16]
     manifest = {
-        "schemaVersion": "hachile-napcat-action-v1", "status": "dry-run",
+        "schemaVersion": "qq-group-advisor-napcat-action-v1", "status": "dry-run",
         "createdAt": datetime.now().astimezone().isoformat(timespec="seconds"),
         "confirmationId": digest, **exact,
         "instruction": "逐字核对目标群、操作和完整内容；只确认此 confirmationId 对应的一个动作。",
@@ -194,7 +194,7 @@ def execute_action(manifest_path: Path, confirmation: str, token: str, timeout: 
     if group_response.get("retcode") not in (None, 0) or actual is None or str(actual) != target:
         raise RuntimeError("NapCat 返回的目标群与 dry-run 不一致，未执行写操作")
     attempt = {
-        "schemaVersion": "hachile-napcat-attempt-v1", "confirmationId": expected,
+        "schemaVersion": "qq-group-advisor-napcat-attempt-v1", "confirmationId": expected,
         "attemptedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
         "action": exact["action"], "payload": exact["payload"],
         "note": "该标记在写请求前生成；即使没有结果文件，也禁止自动重试。",
@@ -202,7 +202,7 @@ def execute_action(manifest_path: Path, confirmation: str, token: str, timeout: 
     attempt_path.write_text(json.dumps(attempt, ensure_ascii=False, indent=2), encoding="utf-8")
     response = _call(exact["baseUrl"], exact["endpoint"], exact["payload"], token, timeout)
     result = {
-        "schemaVersion": "hachile-napcat-result-v1", "confirmationId": expected,
+        "schemaVersion": "qq-group-advisor-napcat-result-v1", "confirmationId": expected,
         "executedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
         "action": exact["action"], "payload": exact["payload"], "response": response,
         "retryPolicy": "never-automatic",
@@ -219,7 +219,7 @@ def snapshot(
         raise ValueError("privacy 只能是 anonymized 或 full")
     start_ts, end_ts = _snapshot_date_bounds(start, end)
     data = {
-        "schemaVersion": "hachile-napcat-snapshot-v1",
+        "schemaVersion": "qq-group-advisor-napcat-snapshot-v1",
         "createdAt": datetime.now().astimezone().isoformat(timespec="seconds"),
         "requestedRange": {"start": start, "end": end, "endInclusive": True, "timezone": "local"},
         "privacy": privacy,

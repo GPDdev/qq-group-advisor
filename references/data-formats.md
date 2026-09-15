@@ -50,7 +50,7 @@ python scripts/prepare_qq_data.py export1.json export2.zip `
   --max-samples-per-chat 200 --output evidence.json
 ```
 
-输出 `hachile-evidence-v1` 包含：请求日期、模式、来源警告、每个会话的消息数/参与人数/活跃日期/头部成员占比/小时分布、均匀抽样消息和媒体候选。
+输出 `qq-group-advisor-evidence-v1` 包含：请求日期、模式、来源警告、每个会话的消息数/参与人数/活跃日期/头部成员占比/小时分布、均匀抽样消息和媒体候选。
 
 - 去重优先用 `群标识 + 消息 id`；没有 id 时使用时间、发送者和文本哈希。
 - 日期按运行机器的本地时区，首尾日期均包含。

@@ -514,7 +514,7 @@ def build_evidence(
         warnings.extend(source_warnings)
 
     return {
-        "schemaVersion": "hachile-evidence-v1",
+        "schemaVersion": "qq-group-advisor-evidence-v1",
         "createdAt": datetime.now().astimezone().isoformat(timespec="seconds"),
         "requestedRange": {"start": start, "end": end, "endInclusive": True, "timezone": "local"},
         "modes": {"privacy": privacy, "content": content_mode},
@@ -528,7 +528,7 @@ def build_evidence(
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="把 QCE 导出整理为 hachile-skill 可审计证据包")
+    parser = argparse.ArgumentParser(description="把 QCE 导出整理为 QQ Group Advisor 可审计证据包")
     parser.add_argument("sources", nargs="+", type=Path, help="QCE JSON/JSONL/TXT/XLSX/HTML、分块目录或 ZIP")
     parser.add_argument("--start", required=True, help="开始日期 YYYY-MM-DD（含）")
     parser.add_argument("--end", required=True, help="结束日期 YYYY-MM-DD（含）")

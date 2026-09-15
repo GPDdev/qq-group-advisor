@@ -1,6 +1,6 @@
 interface:
-  display_name: "Hachile QQ 社群规划"
+  display_name: "QQ 群策划顾问（Hachile）"
   short_description: "分析 QQ 社群需求，生成定位、治理、宣传与群规方案"
-  default_prompt: "使用 $hachile-skill 分析已授权的 QQ 数据，判断是否值得建群并生成可解释方案。"
+  default_prompt: "使用 $qq-group-advisor 分析已授权的 QQ 数据，判断是否值得建群并生成可解释方案。"
 policy:
   allow_implicit_invocation: true

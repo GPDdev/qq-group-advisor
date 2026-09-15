@@ -1,9 +1,9 @@
 ---
-name: hachile-skill
+name: qq-group-advisor
 description: Use when deciding whether to create, repurpose, merge, or pause a QQ group from authorized contacts, group metadata, chat exports, personal constraints, and community goals.
 ---
 
-# Hachile QQ 社群规划
+# QQ Group Advisor
 
 基于用户有权分析的 QQ 数据，给出可解释、可执行的社群决策。先决定“是否需要这个群、它是什么”，再讨论宣传、治理和规则。不要把消息多等同于社群有价值。
 

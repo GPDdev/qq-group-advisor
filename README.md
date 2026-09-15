@@ -1,6 +1,6 @@
-# hachile-skill
+# QQ Group Advisor
 
-一个面向 QQ 社群规划的 Codex Skill。
+> A Hachile Project · 面向 QQ 社群规划的 Codex Skill
 
 它会结合经授权的好友列表、群资料、聊天记录、个人经历和运营目标，先判断是否真的需要建群，再给出群定位、治理方式、宣传渠道、宣传文案和群规方案。
 
@@ -47,19 +47,19 @@
 将仓库克隆到个人技能目录：
 
 ```bash
-git clone <你的仓库地址> ~/.codex/skills/hachile-skill
+git clone <你的仓库地址> ~/.codex/skills/qq-group-advisor
 ```
 
-也可以下载 ZIP，将其中的 `hachile-skill` 文件夹解压到：
+也可以下载 ZIP，将其中的 `qq-group-advisor` 文件夹解压到：
 
 ```text
-~/.codex/skills/hachile-skill
+~/.codex/skills/qq-group-advisor
 ```
 
 安装后确认该目录下直接存在 `SKILL.md`，然后在 Codex 中使用：
 
 ```text
-$hachile-skill
+$qq-group-advisor
 ```
 
 ## 推荐使用流程
@@ -80,7 +80,7 @@ $hachile-skill
 可以直接这样发起任务：
 
 ```text
-请使用 $hachile-skill 分析这些 QQ 数据。
+请使用 $qq-group-advisor 分析这些 QQ 数据。
 
 授权：这是我自己的 QQ 数据。
 日期：2026-01-01 至 2026-01-31。
@@ -185,7 +185,7 @@ python scripts/napcat_actions.py execute action.json `
 ## 项目结构
 
 ```text
-hachile-skill/
+qq-group-advisor/
 ├── SKILL.md
 ├── README.md
 ├── agents/
